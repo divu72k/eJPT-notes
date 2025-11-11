@@ -1,0 +1,7 @@
+- Antivirus uses signature based detection.
+- Encoding is used to change the signature of the payload to avoid its detection from the antivirus
+- To view the encoders, type {msfvenom --list encoders}
+- use the -e flag for choosing the encoder
+- use the -i flag to increase the iteratios of encoding
+- we can use portable executables for injecting the payload by using the -x flag
+- we can make sure to keep the executable's utility by using the -k flag as injucting the payload to an executable hinders with its normal execution

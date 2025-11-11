@@ -1,0 +1,1 @@
+login though SSH -> upgrade the session -> exploit chkrootkit and upgrade the session -> use sshkey_persistence exploit-> SET createsshfolder TRUE -> copy the key from loot to another file -> use it to interact with the target

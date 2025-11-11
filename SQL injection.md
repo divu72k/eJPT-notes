@@ -1,0 +1,5 @@
+- use ' to see the error generated, if it is db based its a hit.
+- if using it in a url, close the query using ' and use '+' for spaces and end the injected query with -- to make the followed up query as a comment so that it doesn't affect the injection.
+- **union attacks**: start with union select null, and increase the number of nulls until the website responds with an error.
+- start replacing one of the nulls with the column that u want as an output and change the order unless the website responds to it with actual data.
+- u can also use the union approach for multiple columns.
