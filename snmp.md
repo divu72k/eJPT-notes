@@ -1,0 +1,5 @@
+- SNMP runs on UDP.
+- To scan that use the **sU** flag in nmap.
+- Use the snmp-brute library to find valid community names.
+- Use this command to scan with all the snmp scripts: **nmap -sU -p 161 --script snmp-* demo.ine.local**
+- Use snmp walk to get data from your network devices. 
