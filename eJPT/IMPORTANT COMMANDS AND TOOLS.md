@@ -1,18 +1,18 @@
-**host** - for dns lookups
-**httrack** - for downloading a website's files
-**whois**- used for whois info like registrat, owners etc.
-**netcraft**- used for info regarding registrar and important emails
-**evil-winrm.rb**- ruby script for getting a reverse shell on winRM
-**crackmapexec**- used for enumerating and atacking utils such as winRM, ssh etc.
-**enum4linux**-used for SAMBA enumeration.
-**important nmap scripts for smb:** smb-protocols, smb-security-mode, smb-enum-users.nse
-**wp-scan:** used for scanning wordpress website
-**Nikto**: used for scanning a website for vulnerabilities
-**staged payload:** delivered in smaller parts, payload is deleted upon execution.
-**stageless payload:** whole payload is delivered at once and payload is not deleted after execution.
-**SPAWN_PTY**: can be used with supported modules to create a meterpreter session
-**JohnTheRipper**: used for cracking hashes
-**Local FIle Inclusion**: ../../flag.txt
+- **host** - for dns lookups
+- **httrack** - for downloading a website's files
+- **whois**- used for whois info like registrat, owners etc.
+- **netcraft**- used for info regarding registrar and important emails
+- **evil-winrm.rb**- ruby script for getting a reverse shell on winRM
+- **crackmapexec**- used for enumerating and atacking utils such as winRM, ssh etc.
+- **enum4linux**-used for SAMBA enumeration.
+- **important nmap scripts for smb:** smb-protocols, smb-security-mode, smb-enum-users.nse
+- **wp-scan:** used for scanning wordpress website
+- **Nikto**: used for scanning a website for vulnerabilities
+- **staged payload:** delivered in smaller parts, payload is deleted upon execution.
+- **stageless payload:** whole payload is delivered at once and payload is not deleted after execution.
+- **SPAWN_PTY**: can be used with supported modules to create a meterpreter session
+- **JohnTheRipper**: used for cracking hashes
+- **Local FIle Inclusion**: ../../flag.txt
 
 - best reverse shell for samba -> is_known_pipe
 - windows network enum commands: ```
