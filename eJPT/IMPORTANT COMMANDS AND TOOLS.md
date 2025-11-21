@@ -1,5 +1,5 @@
 ##DON'T DEPEND ON METASPLOIT COMPLETELY##
-**Searchsploit & msfvenom > msfvenom**
+- **Searchsploit & msfvenom > msfvenom**
 - **host** - for dns lookups
 - **httrack** - for downloading a website's files
 - **whois**- used for whois info like registrat, owners etc.
@@ -18,10 +18,10 @@
 
 - best reverse shell for samba -> is_known_pipe
 - windows network enum commands: ```
-ipconfig /all
-route print
-arp -a
-netstat -ano
+ -- ipconfig /all
+-- route print
+ -- arp -a
+-- netstat -ano
 - use **http-enum** script in nmap to check the important files on a website
 - windows process enum commands: net start, wmic service list brief, tasklist /SVC, schtasks /query /fo LIST
 - To run the JAWS script type: powershell.exe -ExecutionPolicy Bypass -File .\jaws-enum.ps1 -OutputFilename JAWS-Enum.txt
