@@ -8,7 +8,7 @@
 - **crackmapexec**- used for enumerating and atacking utils such as winRM, ssh etc.
 - **enum4linux**-used for SAMBA enumeration.
 - **important nmap scripts for smb:** smb-protocols, smb-security-mode, smb-enum-users.nse
-- **wp-scan:** used for scanning wordpress website
+- **wp-scan:** used for scanning wordpress website(for enumeration use : wpscan --url http://www.smol.thm --enumerate p)
 - **Nikto**: used for scanning a website for vulnerabilities
 - **staged payload:** delivered in smaller parts, payload is deleted upon execution.
 - **stageless payload:** whole payload is delivered at once and payload is not deleted after execution.
