@@ -1,0 +1,8 @@
+- unintended action by the server.
+- can be done by changing the APIs such as localhost/admin.
+- Best way is using a URL which resolves to localhost such as 127.1, 2130706433, 017700000001 or 0x7f000001 (can be used for bypassing blacklist filters).
+- upon that obfuscate using double URL encoding: a->%61->%2561
+- embedding credentials and using # to truncate URLs can help bypass whitelist input filters.
+- Also leverage DNS hierarchy.
+- WHile using creds, use @.
+- Also redirect using path params in the URL.
