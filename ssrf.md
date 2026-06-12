@@ -6,3 +6,6 @@
 - Also leverage DNS hierarchy.
 - WHile using creds, use @.
 - Also redirect using path params in the URL.
+- For blind attacks, best way to detect is OAST attack with interactsh-client and check for any http interaction form the victim.
+- Another avenue for exploiting blind SSRF vulnerabilities is to induce the application to connect to a system under the attacker's control, and return malicious responses to the HTTP client that makes the connection.
+- This can lead to RCE on the server's architecture.
