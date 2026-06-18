@@ -3,3 +3,4 @@
 - **union attacks**: start with union select null, and increase the number of nulls until the website responds with an error.
 - start replacing one of the nulls with the column that u want as an output and change the order unless the website responds to it with actual data.
 - u can also use the union approach for multiple columns.
+- in XML based applications, try running mathematical expressions, if they work try finding the column names using **UNION SELECT NULL**s
