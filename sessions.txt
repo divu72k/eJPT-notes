@@ -1,0 +1,25 @@
+**BY Duration**
+Session cookies:
+- deleted when th ebrowser closes.
+- login state can be an example.
+
+Persistent cookies:
+- Stored until Expires or Max-Age date, or manually cleared.
+- "remember me" button does this to your session cookie.
+
+**By Source**
+- First-party: domain the user is recieving
+- Third-party: An external domain embedded in the page
+
+**By Purpose**
+- Strictly necessary: Session management, load balancing and security.
+- Functional: UI preferences
+- Analytical: page views, dwell time, bounce rate
+- Marketing cookies: Ad delivery, audience measurement
+- Social: enable like/share buttons, link activity to social profiles.
+
+**By security attributes**
+- Secure: cookie sent only over HTTPS(MitM mitigation)
+- HttpOnly: Cookie is invisible to Javascript(Session theft via XSS mitigation)
+- SameSite=Strict:cookie is never sent on cross-site requests(CSRF max protection)
+- SameSite=Lax: cookie sent on top-level navigations(link defaults) but not on cross-site POSTs, iframes or fetch (CSRF balanced default protection)

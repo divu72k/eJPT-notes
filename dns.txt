@@ -1,0 +1,5 @@
+When a user searches for a website, the computer checks the browser DNS cache to find its IP, if IP is not available then it checks with the OS DNS cache and if not there as well, it goes to the Router and makes it perform a DNS lookup:
+- Recursive Resolver Query: recursive DNS resolver checks its cache for the IP addr of a website.
+- Root Name Server query: if not in cache, the resolver queries a root name server, it directs it to an appropriate TLD server.
+- TLD server query: ives the domain extension to the resolver and ives the IP of the authoritative name server.
+- Authoritative name server query: this hands the DNS recors over to the resolver and it in turn returns it back to the browser and we are able to view the web page

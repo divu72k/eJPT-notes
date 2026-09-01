@@ -1,0 +1,43 @@
+X-Frame-Options: indicates whether a browser is allowed to render a page in <frame>,<iframe>,<embed> or <object>. also used for avoiding click-jacking attacks.
+
+X-XSS-Protection: used for detecting reflected XSS attacks.
+
+X-Content-Type-Options: indicate that the MIME types given in the COntent-typr headers should be followed.
+
+Referrer-Policy: controls how much referrer information should be included with the requests.
+
+Content-Type: indicates the original media type of the resource
+
+Cache-Control: defines how responses are cached in browsers and intermediate caches.
+
+Set-Cookie: sends a toke nto the user agent from the server so it can send it back to the server later.
+
+Strict-Transport-Security: instructs browser to only use HTTPS
+
+Content-Security-Policy: used to specify the origin of content that is allowed to be loaded on a website.
+
+Access-Control-Allow-Origin: allows a resource in siteA to be accessible by siteB.
+
+Cross-Origin-Opener-Policy: ensures a top-level document does not share a browsing context group with cross-origin documents.
+
+Cross-Origin-Embedder-Policy: prevents a document from loading any cross-origin resources that don't explicitly grant the document permission.
+
+Permissions-Policy: allows to control which origins can use which browser features, both top-level page and in embedded frames.
+
+Server: described the software used by the origin server that handled the request(basically the server that generated the response)
+
+X-Powered-By: describes the technology used by the webserver.
+
+X-AspNet-Version: provides info about .NET version.
+
+X-AspNetMvc-Version: same as X-AspNet-Version.
+
+X-Robots-Tag: conrols how search engines and other automated crawlers index and display non-HTML resources.
+
+X-DNS-Prefetch-COntrol: controls DNS prefetching.
+
+Content-Disposition: attachments: to force download instead of inline rendering
+
+Content-Type: application/octet-stream: used for unknown or binary files.
+
+X-Content-Type-Options: nosniff: to prevent MIME type sniffing.

@@ -1,0 +1,37 @@
+HTTP basic auth:
+- sends username:password in an HTTP header, b64-encoded.
+- server decoded this and checks credentials.
+- advised to always do over HTTPS.
+
+API Keys:
+- long random string assigned to the user/app, sent in a header.
+
+HMAC-Signed Requests:
+- provider signs the payload+timestamp using a shared secret, in addition to using HTTPS.
+- rejects requests that are too old to stop replay attacks.
+- use constant-time comparison to avoid iming attacks.
+- runs over TLS.
+
+JWT:Stateless Token-based Auth:
+- JWT is a compact, signed token that contains JSON claims about a user or client.
+- used for access and refresh tokens.
+- access token: short-lived ; sent with each API request.
+- refresh token: longer-lived(days); used to obtain new access tokens; stored more carefully.
+
+OAuth 2.0: Delegated Access:
+- gives limited access to a resource on your behalf without sharing your password.
+- Resource owner: the human user.
+- Client: the app requesting delegated access.
+- Authorisation Server: service handling login and consent, issuing tokens.
+- Resource server: APIs that hold data.
+
+OpenID Connect (OIDC):
+- turns OAuth2 into a login system.
+- it adds an ID Token(JWT) having some basic claims.
+- it also adds a UserInfo endpoint API to fetch more profile details.
+- Standard claim names like sub, email, email_verified, name are also added.
+
+**SERVER-PATTERNS**
+- cookie+server session.
+- OIDC+OAuth2 with PKCE(backend APIs)
+
