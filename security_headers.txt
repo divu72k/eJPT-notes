@@ -1,20 +1,50 @@
-X-Frame-Options: indicates whether a browser is allowed to render a page in <frame>,<iframe>,<embed> or <object>. also used for avoiding click-jacking attacks.
+X-Frame-Options: 
+- indicates whether a browser is allowed to render a page in <frame>,<iframe>,<embed> or <object>. also used for avoiding click-jacking attacks.
+- directives: DENY, SAMEORIGIN
+- DENY: doc cannot be loaded in a frame no matter its origin
+- SAMEORIGIN: embedding can only happen if all ancestor frames have the same origin as the page itself
 
 X-XSS-Protection: used for detecting reflected XSS attacks.
 
 X-Content-Type-Options: indicate that the MIME types given in the COntent-typr headers should be followed.
 
-Referrer-Policy: controls how much referrer information should be included with the requests.
+Referrer-Policy:
+- controls how much referrer information should be included with the requests.
+- directives: no-referrer, no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+- no-referrer: referrer head will be omitted
+- no-referrer-when-downgrade: send the origin to the referrer head when the security level stays the same or improves.
+- origin: send only the origin to the referer header
+- origin-when-cross-origin: if same origin, send origin, path and query string. when cross-origin, send only the origin.
+- same-origin: send origin, path and query string for same origin requests only
+- strict-origin: send only origin when the protocol security level stays the same, doesn't send the referrer header to less secure destinations.
+- strict-origin-when-cross-origin: Send the origin, path, and query string when performing a same-origin request. For cross-origin requests send the origin (only) when the protocol security level stays same (HTTPS→HTTPS). Don't send the Referer header to less secure destinations (HTTPS→HTTP).
 
 Content-Type: indicates the original media type of the resource
 
-Cache-Control: defines how responses are cached in browsers and intermediate caches.
+Cache-Control:
+- defines how responses are cached in browsers and intermediate caches.
+- cache is of 2 types: fresh and stale
+- fresh cache is a reusable unit of cache and can be used directly.
+- stale cache is a unusable unit of cache and should be validated before using.
+- directives: max-age: defines for how long the cache will be fresh
+- s-maxage: like maxage but for shared cache
+- public: response is stored in a shared cache
+- private: response is stored in the browser
+- no-cache: cache is stored but should be revalidated by the server before use.
+- no-store: don't store the response
+- must-revalidate: once stale, the cache must be revalidated by he server.
+- immutable: response won't change while fresh.
+- no-transform: cache shouldn't odify the response representation.
+- max-stale: client is willing to accept a stale response.
+- min-fresh: client wants a response that will remain fresh for at least the specified time.
+- stale-while-revalidate: a stale response can temporarily be served while the cache fetches a fresh one in the background.
+- stale-if-error: a stale response may be served when the origin returns an error.
 
 Set-Cookie: sends a toke nto the user agent from the server so it can send it back to the server later.
 
 Strict-Transport-Security: instructs browser to only use HTTPS
 
-##Content-Security-Policy:
+Content-Security-Policy:
 - used to specify the origin of content that is allowed to be loaded on a website.
 - introduces directives: default-src 'self' ; img-src 'self' example.com; object-src ; embed-src.
 - default-src 'self' ensures that the origin of all the web resources is the same.
@@ -23,27 +53,55 @@ Strict-Transport-Security: instructs browser to only use HTTPS
 - embed-src is used for defining the source of the embedded content.
 - we can use these directives to block these objects by setting them to none.
 
-Access-Control-Allow-Origin: allows a resource in siteA to be accessible by siteB.
+Access-Control-Allow-Origin: 
+- allows a resource in siteA to be accessible by siteB.
+- directives: *, <origin>, null
+- *: allows data from all origins
+- <origin>: allows data from a single origin
+- null: allows data from no origin
 
-Cross-Origin-Opener-Policy: ensures a top-level document does not share a browsing context group with cross-origin documents.
+Cross-Origin-Opener-Policy:
+- ensures a top-level document does not share a browsing context group with cross-origin documents.
+- directives: unsafe-none, same-origin-allow-popups, same-origin and noopener-allow-popups
+- unsafe-none:document permits sharing its browsing context group with any other document, making it unsafe. used for opting out a documentfor process isolation.
+- same-origin: document permits loading into BCGs that use COOP and contain only same-origin document.
+- same-origin-allow-popups: allows opening of documents with window.open() in the same BCG if they have a COOP value of unsafe-none.
+- noopener-allow-popups: always open in a new BCG, except when opened by navigating from a document that also has noopener-allow-popups.
 
-Cross-Origin-Embedder-Policy: prevents a document from loading any cross-origin resources that don't explicitly grant the document permission.
+Cross-Origin-Embedder-Policy:
+- prevents a document from loading any cross-origin resources that don't explicitly grant the document permission.
+- directives: require-corp
+- require-corp: cross-origin resources that are embedded need to explicitly opt in. it does that Cross-Origin-Resource-Policy: cross-origin.
+- credentialless: some embedded cross-origin resources don't need to opt in to be embedded.
+- unsafe-none: no embedding restrictions
 
-Permissions-Policy: allows to control which origins can use which browser features, both top-level page and in embedded frames.
+Permissions-Policy:
+- allows to control which origins can use which browser features, both top-level page and in embedded frames.
+- typical format Permissions-Policy:<directive>:<allowlist>
+- <allowlist>: *(wildcard), () (empty allowlist), self, src, "<origin>"
+- <directive>: accelerometer, ambient-light-sensor etc
 
 Server: described the software used by the origin server that handled the request(basically the server that generated the response)
 
 X-Powered-By: describes the technology used by the webserver.
 
-X-AspNet-Version: provides info about .NET version.
-
-X-AspNetMvc-Version: same as X-AspNet-Version.
-
-X-Robots-Tag: conrols how search engines and other automated crawlers index and display non-HTML resources.
+X-Robots-Tag: 
+- controls how search engines and other automated crawlers index and display non-HTML resources.
+- indexing-rule: all, noindex, nofollow, none, nosnippet, indexifembedded, max-snippet: <number>, max-image-preview: <setting>
+- all: no restrictions for indexing or serving in search results.
+- noindex: don't show this page, media or resource in search results.
+- nofollow: don't follow the links in the page.
+- none: equivalent to noindex, nofollow
+- nosnippet: no previews in search results, a static image may be visible.
+- indexifembedded: allowed to index if the content if embedded, can bypass noindex
+- max-snippet: use a max <number> of characters as a textual snippet for this search result.
+- max-image-preview: The maximum size of an image preview for this page in a search results. If omitted, search engines may show an image preview of the default size.
 
 X-DNS-Prefetch-COntrol: controls DNS prefetching.
 
-Content-Disposition: attachments: to force download instead of inline rendering
+Content-Disposition: 
+- inline: doesn't force download and loads the document inside the browser
+- attachments: to force download instead of inline rendering
 
 Content-Type: application/octet-stream: used for unknown or binary files.
 
