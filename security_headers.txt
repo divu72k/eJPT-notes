@@ -14,7 +14,14 @@ Set-Cookie: sends a toke nto the user agent from the server so it can send it ba
 
 Strict-Transport-Security: instructs browser to only use HTTPS
 
-Content-Security-Policy: used to specify the origin of content that is allowed to be loaded on a website.
+##Content-Security-Policy:
+- used to specify the origin of content that is allowed to be loaded on a website.
+- introduces directives: default-src 'self' ; img-src 'self' example.com; object-src ; embed-src.
+- default-src 'self' ensures that the origin of all the web resources is the same.
+- img-src example.com ensures the images loaded into the browser are from example.com.
+- object-src is used for defining the source of the website objects.
+- embed-src is used for defining the source of the embedded content.
+- we can use these directives to block these objects by setting them to none.
 
 Access-Control-Allow-Origin: allows a resource in siteA to be accessible by siteB.
 
