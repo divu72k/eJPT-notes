@@ -1,0 +1,79 @@
+**A01: Broken Access Control**
+- violation of a traditional user-role system, users are able to do what they are not upposed to do.
+- bypassing access controls by modifying the URL, internal application state, HTML page or by using an attack tool that modifies API requests.
+- permitting viewing or editing someone else's account by providing its unique identifier.
+- accessible API with mssing access controls in PUT, PATCH, POST and DELETE.
+- metadata manipulation, such as replaying or tampering with a JWT, a cookie or a hidden field or abusing JWT invalidation to escalate privileges.
+- CORS misconfig allows API access from unauthorised or untrusted origins.
+
+
+**A02: Security misconfiguration**
+- missing appropriate security hardening or improper configured permissions on cloud services.
+- unnecessary features are enabled.
+- default passwords and their passwords are still enabled.
+- lack of configuration for intercepting excessive messages.
+- for upgraded systems, latest security features are disabled or not configured properly.
+- excessive prioritisation for backward compatibility.
+- security settings in the application servers, frameworks, libs, DBs are not set to secure values.
+- server doesn't send any security headers or directives or they are not set to secure values.
+
+**A03: Software Supply chain failures**
+- not keeping track of the versions of all the components that are being used.
+- software is vulnerable, unsupported or out of date.
+- not scanning for vulnerabilities regularly.
+- mismanagement of tracing of changes.
+- not hardened any part of the supply chain.
+- no separation of duty. a single person writes the code and promotes it all the way to production.
+- components are form untrusted sources.
+- not fixing or upgrading of underlying platform, frameworks and dependecies in a risk-based, timely fashion.
+
+**A04: Cryptographic failures**
+- old/weak cryptographic algorithms or protocols used by either default or in the older code.
+- default/weak cryptoraphic keys are in use
+- encryption not enforced.(security headers)
+- server certificate and the trust chain properly validated
+- randomness used doesn't need the requirement
+- use of deprecated hash functions like md5 and sha1
+- exploitation of excessive error messages.
+- crypto algo can be downgraded or bypassed.
+
+**A05: Injection**
+- user-supplied data is not validated, filtered or sanitized by the application.
+- dynamic queries are used directly without safely validating the user input.
+- unsanitized data is used within object-relational mapping (ORM) search parameters to extract additional, sensitive records.
+- hostile data is directly used or concatenated.
+
+**A06: Insecure Design**
+- Gathering Requirements and Resource Management: negotiate business requirements for an application with the business, including the protection requirements concerning CIA.
+- creating a secure design: constantly evaluate threats and ensures that code is robustly designed and tested to prevent known attack. threat modelling should be integrated. analyze edge cases.
+- secure development lifecycle: non-negotiatble for software development and incentivise based on performance.
+
+**A07: Authentication Failures**
+- permits automated brute-forcing attacks.
+- permits default, weak, or wellknown passwds.
+- allows users to create new accounts with breached credentials.
+- use if ineffective recovery methods and forgot-password processes.
+- plaintext, encrypted or weakly hashed passwords data stores.
+- missing MFA
+- exposes session identifier to the URL, a hidden field or another insecure location accessible to the client.
+- reuses the same session identifier after successful login.
+- doesn't invalidate user sessions or authentication tokens
+
+**A08: Software or Data integrity failures**
+- arise from infrastructure that doesn't protect against invalid or untrusted code or data being treated as trusted and valid.
+- ex: untrusted repos, sources and CDNs; insecure CI/CD pipeline without consuming and providing software integrity checks.
+
+**A09: Security Logging and Alerting Failures**
+- logs related to logins are not logged or logged inconsistently.
+- warning and errors generate no, inadequate or unclear log messages.
+- The integrity of logs is not properly protected from tampering.
+- application logs and APIs are not monitored for suspicious activity.
+- logs are not backed up and stored locally.
+- no proper escalation mechanisms are in place.
+- DAST tools don't raise any alerts.
+- mishandling errors and other exceptional conditions such that the system is unaware there was an error.
+
+
+**A10: Mishandling of Exceptional conditions**
+- programs fail to prevent, detect and respond to unusual and unpredictable situations which leads to crashes, unexpected behavior, and sometimes vulnerabilities.
+- caused by missing, poor or incomplete input validation or latr, high level error handling instead at the functions where they occur or unexpected environmental states.
