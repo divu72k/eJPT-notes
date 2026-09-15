@@ -8,4 +8,5 @@
 ```
 ' AND 1=CAST((SELECT 1) AS int)--
 ```
-any query can be used instead of (select 1)
+  any query can be used instead of (select 1)
+- always see what happens while adding two or more '. It can actually tell if the website is causing any error while executing a correct sql query as a safety mechanism which can be used as an indicator.
