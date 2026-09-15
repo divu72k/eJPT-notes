@@ -4,3 +4,8 @@
 - start replacing one of the nulls with the column that u want as an output and change the order unless the website responds to it with actual data.
 - u can also use the union approach for multiple columns.
 - in XML based applications, try running mathematical expressions, if they work try finding the column names using **UNION SELECT NULL**s
+- if select is returning an error use **CAST**. Eg:
+```
+' AND 1=CAST((SELECT 1) AS int)--
+```
+any query can be used instead of (select 1)
