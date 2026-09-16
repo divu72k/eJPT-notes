@@ -43,3 +43,5 @@
   Remove it's presence:
   <meta name="Referer"
   content = "never">
+
+- Make sure the form is auto-submitting using: document.forms[index].submit();
